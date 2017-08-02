@@ -13,6 +13,7 @@ namespace SistemaParqueo
     static class Program
     {
         public static AdamSocket adam6060 = new AdamSocket();
+
         public static AdamDevice adam_func = new AdamDevice();
 
         public static bool printerPrinting;
