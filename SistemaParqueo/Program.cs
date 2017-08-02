@@ -14,6 +14,7 @@ namespace SistemaParqueo
     {
         public static AdamSocket adam6060 = new AdamSocket();
         public static AdamDevice adam_func = new AdamDevice();
+
         public static bool printerPrinting;
         public static bool printerBusy;
         public static bool printerPaperJammed;
