@@ -34,7 +34,7 @@ namespace SistemaParqueo
         {
             timer1.Enabled = false;
        
-            if (Program.PushButton)
+            if (Program.AdamInput1)
             {
                 input1Adam_pic.Image = Properties.Resources.circle_ok;
                 EntradaSalida_tooltip.SetToolTip(input1Adam_pic, "ON");
@@ -45,7 +45,7 @@ namespace SistemaParqueo
                 EntradaSalida_tooltip.SetToolTip(input1Adam_pic, "OFF");
             }
 
-            if (Program.LoopTicketEntrada)
+            if (Program.AdamInput2)
             {
                 input2Adam_pic.Image = Properties.Resources.circle_ok;
                 EntradaSalida_tooltip.SetToolTip(input2Adam_pic, "ON");
@@ -56,7 +56,7 @@ namespace SistemaParqueo
                 EntradaSalida_tooltip.SetToolTip(input2Adam_pic, "OFF");
             }
 
-            if (Program.LoopBrazoEntrada)
+            if (Program.AdamInput3)
             {
                 input3Adam_pic.Image = Properties.Resources.circle_ok;
                 EntradaSalida_tooltip.SetToolTip(input3Adam_pic, "ON");
@@ -102,7 +102,7 @@ namespace SistemaParqueo
 
             
 
-            if (Program.AbrirBrazoEntrada)
+            if (Program.AdamOutput1)
             {
                 output1Adam_pic.Image = Properties.Resources.circle_ok;
                 EntradaSalida_tooltip.SetToolTip(output1Adam_pic, "ON");
@@ -173,7 +173,7 @@ namespace SistemaParqueo
 
         private void output1Adam_pic_Click(object sender, EventArgs e)
         {
-            if (Program.AbrirBrazoEntrada)
+            if (Program.AdamOutput1)
             {
                 adam_func.AdamWrite(Program.adam6060, 17, false);
             }

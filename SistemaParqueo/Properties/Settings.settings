@@ -2,30 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SistemaParqueo.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="DefaultPrinter" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ByPassLoopEntrada" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="ByPassAdam" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="AdamIp" Type="System.String" Scope="User">
-      <Value Profile="(Default)">10.0.0.12</Value>
-    </Setting>
-    <Setting Name="AdamPort" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">502</Value>
-    </Setting>
-    <Setting Name="ByPassLoopBrazoEntrada" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="EstacionNombre" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Nombre Estacion</Value>
-    </Setting>
-    <Setting Name="EstacionNumero" Type="System.String" Scope="User">
-      <Value Profile="(Default)">01</Value>
-    </Setting>
     <Setting Name="Conexion" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
@@ -33,6 +9,9 @@
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=localhost;Initial Catalog=SistemaParqueo;User ID=sa;Password=12345678;Encrypt=False;Column Encryption Setting=Disabled</Value>
+    </Setting>
+    <Setting Name="Estacion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">01</Value>
     </Setting>
   </Settings>
 </SettingsFile>

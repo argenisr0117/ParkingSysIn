@@ -14,7 +14,7 @@ namespace SistemaParqueo
         bool MprinterPaperJammed;
         bool MprinterOutOfPaper;
         bool MprinterDoorOpened;
-        bool MprinterPrinting;
+        bool MprinterError;
         bool MadamOnline;
         bool MadamInput1;
         bool MadamInput2;
@@ -49,10 +49,10 @@ namespace SistemaParqueo
             set { MprinterDoorOpened = value; }
         }
 
-        public bool printerPrinting
+        public bool printerError
         {
-            get { return MprinterPrinting; }
-            set { MprinterPrinting = value; }
+            get { return MprinterError; }
+            set { MprinterError = value; }
         }
 
         public bool adamOnline
@@ -113,7 +113,7 @@ namespace SistemaParqueo
             lst.Add(new clsParametros("@p_paperjammed", MprinterPaperJammed));
             lst.Add(new clsParametros("@p_outofpaper", MprinterOutOfPaper));
             lst.Add(new clsParametros("@p_dooropened", MprinterDoorOpened));
-            lst.Add(new clsParametros("@p_printing", MprinterPrinting));
+            lst.Add(new clsParametros("@p_error", MprinterError));
             lst.Add(new clsParametros("@a_online", MadamOnline));
             lst.Add(new clsParametros("@a_input1", MadamInput1));
             lst.Add(new clsParametros("@a_input2", MadamInput2));

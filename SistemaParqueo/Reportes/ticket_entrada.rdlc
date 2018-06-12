@@ -6,10 +6,10 @@
         <Source>Database</Source>
         <Value>=Fields!img.Value</Value>
         <MIMEType>image/jpeg</MIMEType>
-        <Top>0.88888in</Top>
-        <Left>0.59833in</Left>
-        <Height>0.25in</Height>
-        <Width>1.29292in</Width>
+        <Top>0.69444in</Top>
+        <Left>0.68749in</Left>
+        <Height>0.44444in</Height>
+        <Width>1.71654in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -26,6 +26,7 @@
                 <Value>=Fields!fecha_ent.Value</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
+                  <FontSize>14pt</FontSize>
                   <Format>d</Format>
                 </Style>
               </TextRun>
@@ -36,10 +37,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>0.06944in</Top>
-        <Left>0.82056in</Left>
+        <Top>0.05556in</Top>
+        <Left>0.10876in</Left>
         <Height>0.25in</Height>
-        <Width>1.38542in</Width>
+        <Width>1.13319in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -61,6 +62,7 @@
                 <Value>=Fields!hora.Value</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
+                  <FontSize>12pt</FontSize>
                   <Format>h:mm:ss tt</Format>
                   <Language>es-DO</Language>
                 </Style>
@@ -70,10 +72,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
-        <Top>0.31944in</Top>
-        <Left>0.82056in</Left>
+        <Top>0.05556in</Top>
+        <Left>1.45597in</Left>
         <Height>0.25in</Height>
-        <Width>1.38543in</Width>
+        <Width>1.14944in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -95,6 +97,7 @@
                 <Value>=Fields!estacion_ent.Value</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
+                  <FontSize>11pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -102,77 +105,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>0.56944in</Top>
-        <Left>0.82055in</Left>
+        <Top>0.38889in</Top>
+        <Left>1.18514in</Left>
         <Height>0.25in</Height>
-        <Width>1.38543in</Width>
+        <Width>0.71653in</Width>
         <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox1">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Fecha:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>Gray</Color>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.06944in</Top>
-        <Left>0.10875in</Left>
-        <Height>0.25in</Height>
-        <Width>0.71181in</Width>
-        <ZIndex>4</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Hora:</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>Gray</Color>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.31944in</Top>
-        <Left>0.10875in</Left>
-        <Height>0.25in</Height>
-        <Width>0.71181in</Width>
-        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -201,11 +138,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.56944in</Top>
-        <Left>0.10875in</Left>
+        <Top>0.375in</Top>
+        <Left>0.18513in</Left>
         <Height>0.25in</Height>
         <Width>0.71181in</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -217,24 +154,24 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>3.57752cm</Top>
+        <Top>3.92148cm</Top>
         <Height>0cm</Height>
-        <Width>6.30025cm</Width>
-        <ZIndex>7</ZIndex>
+        <Width>7.094cm</Width>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
         </Style>
       </Line>
-      <Textbox Name="Textbox9">
+      <Textbox Name="Textbox10">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Any promo Here</Value>
+                <Value>=Fields!codigo_barra.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -243,12 +180,12 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>3.75391cm</Top>
-        <Left>0.27623cm</Left>
-        <Height>0.6cm</Height>
-        <Width>5.50334cm</Width>
-        <ZIndex>8</ZIndex>
+        <rd:DefaultName>Textbox10</rd:DefaultName>
+        <Top>3.03387cm</Top>
+        <Left>1.46685cm</Left>
+        <Height>0.71122cm</Height>
+        <Width>3.68089cm</Width>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -259,30 +196,26 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox10">
+      <Textbox Name="Textbox9">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!codigo_barra.Value</Value>
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
+                <Value>=Fields!promocion.Value</Value>
+                <Style />
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>2.9986cm</Top>
-        <Left>1.51976cm</Left>
-        <Height>0.40254cm</Height>
-        <Width>3.28402cm</Width>
-        <ZIndex>9</ZIndex>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>3.99204cm</Top>
+        <Left>0.27625cm</Left>
+        <Height>0.78521cm</Height>
+        <Width>6.81775cm</Width>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -294,13 +227,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.8183in</Height>
+    <Height>2.05788in</Height>
     <Style />
   </Body>
-  <Width>2.48041in</Width>
+  <Width>2.81875in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>2.93688cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -311,7 +244,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>ACISA</Value>
+                  <Value>LEA PARKING</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -324,10 +257,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Top>0.07528in</Top>
-          <Left>0.10875in</Left>
+          <Top>0.07527in</Top>
+          <Left>0.23611in</Left>
           <Height>0.31125in</Height>
-          <Width>2.27209in</Width>
+          <Width>2.06375in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -348,7 +281,6 @@
                   <Value>ParkSolutions</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
-                    <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -362,7 +294,6 @@
                   <Value>Wanna control your parking in a smart way? call us!</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
-                    <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -372,10 +303,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>0.44208in</Top>
-          <Left>0.10875in</Left>
-          <Height>0.48264in</Height>
-          <Width>2.27209in</Width>
+          <Top>0.42818in</Top>
+          <Left>0.13194in</Left>
+          <Height>0.64473in</Height>
+          <Width>2.16792in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -438,6 +369,10 @@
         </Field>
         <Field Name="estacion_ent">
           <DataField>estacion_ent</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="promocion">
+          <DataField>promocion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

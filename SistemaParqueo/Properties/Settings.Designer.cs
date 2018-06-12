@@ -23,102 +23,6 @@ namespace SistemaParqueo.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string DefaultPrinter {
-            get {
-                return ((string)(this["DefaultPrinter"]));
-            }
-            set {
-                this["DefaultPrinter"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ByPassLoopEntrada {
-            get {
-                return ((bool)(this["ByPassLoopEntrada"]));
-            }
-            set {
-                this["ByPassLoopEntrada"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ByPassAdam {
-            get {
-                return ((bool)(this["ByPassAdam"]));
-            }
-            set {
-                this["ByPassAdam"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10.0.0.12")]
-        public string AdamIp {
-            get {
-                return ((string)(this["AdamIp"]));
-            }
-            set {
-                this["AdamIp"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("502")]
-        public int AdamPort {
-            get {
-                return ((int)(this["AdamPort"]));
-            }
-            set {
-                this["AdamPort"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ByPassLoopBrazoEntrada {
-            get {
-                return ((bool)(this["ByPassLoopBrazoEntrada"]));
-            }
-            set {
-                this["ByPassLoopBrazoEntrada"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Nombre Estacion")]
-        public string EstacionNombre {
-            get {
-                return ((string)(this["EstacionNombre"]));
-            }
-            set {
-                this["EstacionNombre"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("01")]
-        public string EstacionNumero {
-            get {
-                return ((string)(this["EstacionNumero"]));
-            }
-            set {
-                this["EstacionNumero"] = value;
-            }
-        }
-        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
@@ -127,6 +31,18 @@ namespace SistemaParqueo.Properties {
         public string Conexion {
             get {
                 return ((string)(this["Conexion"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("01")]
+        public string Estacion {
+            get {
+                return ((string)(this["Estacion"]));
+            }
+            set {
+                this["Estacion"] = value;
             }
         }
     }

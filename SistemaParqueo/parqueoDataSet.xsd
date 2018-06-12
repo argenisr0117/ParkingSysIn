@@ -27,6 +27,7 @@
               <Mapping SourceColumn="hora" DataSetColumn="hora" />
               <Mapping SourceColumn="codigo_barra" DataSetColumn="codigo_barra" />
               <Mapping SourceColumn="estacion_ent" DataSetColumn="estacion_ent" />
+              <Mapping SourceColumn="promocion" DataSetColumn="promocion" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -38,7 +39,7 @@
   <xs:element name="parqueoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="parqueoDataSet" msprop:Generator_UserDSName="parqueoDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SEL_TICKET" msprop:Generator_TableClassName="SEL_TICKETDataTable" msprop:Generator_TableVarName="tableSEL_TICKET" msprop:Generator_RowChangedName="SEL_TICKETRowChanged" msprop:Generator_TablePropName="SEL_TICKET" msprop:Generator_RowDeletingName="SEL_TICKETRowDeleting" msprop:Generator_RowChangingName="SEL_TICKETRowChanging" msprop:Generator_RowEvHandlerName="SEL_TICKETRowChangeEventHandler" msprop:Generator_RowDeletedName="SEL_TICKETRowDeleted" msprop:Generator_RowClassName="SEL_TICKETRow" msprop:Generator_UserTableName="SEL_TICKET" msprop:Generator_RowEvArgName="SEL_TICKETRowChangeEvent">
+        <xs:element name="SEL_TICKET" msprop:Generator_TableClassName="SEL_TICKETDataTable" msprop:Generator_TableVarName="tableSEL_TICKET" msprop:Generator_TablePropName="SEL_TICKET" msprop:Generator_RowDeletingName="SEL_TICKETRowDeleting" msprop:Generator_RowChangingName="SEL_TICKETRowChanging" msprop:Generator_RowEvHandlerName="SEL_TICKETRowChangeEventHandler" msprop:Generator_RowDeletedName="SEL_TICKETRowDeleted" msprop:Generator_UserTableName="SEL_TICKET" msprop:Generator_RowChangedName="SEL_TICKETRowChanged" msprop:Generator_RowEvArgName="SEL_TICKETRowChangeEvent" msprop:Generator_RowClassName="SEL_TICKETRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="fecha_ent" msprop:Generator_ColumnVarNameInTable="columnfecha_ent" msprop:Generator_ColumnPropNameInRow="fecha_ent" msprop:Generator_ColumnPropNameInTable="fecha_entColumn" msprop:Generator_UserColumnName="fecha_ent" type="xs:dateTime" minOccurs="0" />
@@ -61,6 +62,13 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="promocion" msprop:Generator_ColumnVarNameInTable="columnpromocion" msprop:Generator_ColumnPropNameInRow="promocion" msprop:Generator_ColumnPropNameInTable="promocionColumn" msprop:Generator_UserColumnName="promocion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

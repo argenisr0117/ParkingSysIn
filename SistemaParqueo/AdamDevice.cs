@@ -12,12 +12,12 @@ namespace SistemaParqueo
 {
     class AdamDevice
     {
-        public string adamIp = Properties.Settings.Default.AdamIp;
-        public int adamPort =  Properties.Settings.Default.AdamPort;
+        public string adamIp = Program.AdamIp;
+        public int adamPort = Program.AdamPort;
 
         public bool connectAdam(AdamSocket adam6060, string ip, int port)
         {
-    
+           
             if (adam6060.Connected)
             {
                 return true;
@@ -59,9 +59,9 @@ namespace SistemaParqueo
                     Program.AdamInputErrorRead = false;
 
                     if (outbuffer[0])
-                        Program.AbrirBrazoEntrada = true;
+                        Program.AdamOutput1 = true;
                     else
-                        Program.AbrirBrazoEntrada = false;
+                        Program.AdamOutput1 = false;
 
                     if (outbuffer[1])
                         Program.AdamOutput2 = true;
@@ -118,19 +118,19 @@ namespace SistemaParqueo
                    
                     Program.AdamInputErrorRead = false;
                     if (inbuffer[0])
-                        Program.PushButton = false;
+                        Program.AdamInput1 = false;
                     else
-                        Program.PushButton = true;
+                        Program.AdamInput1 = true;
 
                     if (inbuffer[1])
-                        Program.LoopTicketEntrada = false;
+                        Program.AdamInput2 = false;
                     else
-                        Program.LoopTicketEntrada = true;
+                        Program.AdamInput2 = true;
 
                     if (inbuffer[2])
-                        Program.LoopBrazoEntrada = false ;
+                        Program.AdamInput3 = false ;
                     else
-                        Program.LoopBrazoEntrada = true;
+                        Program.AdamInput3 = true;
 
                     if (inbuffer[3])
                         Program.AdamInput4 = false;

@@ -1,72 +1,141 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Management;
-using System.Printing;
-using System.Drawing.Printing;
+using Zebra.Printing;
 
 namespace SistemaParqueo
 {
     class PrinterStatus
     {
-        public void PrinterState(string printerName)
+        public void CheckPrinterStatus()
         {
-            
-            var server = new LocalPrintServer();
-
-
-            PrintQueue queue = server.DefaultPrintQueue;
-            
-
-            if (queue.FullName.ToString() == printerName)
+            var printerStatusCommand = Encoding.GetEncoding(850).GetBytes(@"~HQES");
+            try
             {
-                Program.printerOffline = queue.IsOffline;
-                Program.printerOutOfPaper = queue.IsOutOfPaper;
-                Program.printerPaperJammed = queue.IsPaperJammed;
-                Program.printerQuequeStatus = queue.QueueStatus.ToString();
-                Program.printerDoorOpened = queue.IsDoorOpened;
-                Program.printerPrinting = queue.IsPrinting;    
-            }
+                var zebraConnection = new ZebraUsbStream();
 
-            else
-            {
-                Program.printerOffline = true;
-            }
+                zebraConnection.Write(printerStatusCommand, 0, printerStatusCommand.Length);
 
-            
-        }
+                var statusReturn = new byte[800];
+                var bytesRead = zebraConnection.Read(statusReturn, 0, 800);
 
-        public void anotherPrinter()
-        {
-            string printerName = "Microsoft Print to PDF";
-            string query = string.Format("SELECT * from Win32_Printer WHERE Name LIKE '%{0}'", printerName);
-
-            using (ManagementObjectSearcher searcher = new ManagementObjectSearcher(query))
-            using (ManagementObjectCollection coll = searcher.Get())
-            {
-                try
+                if (bytesRead >= 132)
                 {
-                    foreach (ManagementObject printer in coll)
+                    string stringResult = Encoding.Default.GetString(statusReturn.ToArray());
+                    Console.WriteLine(stringResult);
+                    stringResult = Regex.Replace(stringResult, "[^0-9.]", "");
+
+                    if (stringResult[0].ToString() == "1") // flag printer error
                     {
-                        foreach (PropertyData property in printer.Properties)
-                        {
-                            Console.WriteLine(string.Format("{0}: {1}", property.Name, property.Value));
-                        }
+                        Program.printerError = true;
                     }
+                    else
+                    {
+                        Program.printerError = false;
+                    }
+
+                    if (stringResult[12].ToString() == "1") // flag printer Paused
+                    {
+                        Program.printerPaused = true;
+                    }
+                    else
+                    {
+                        Program.printerPaused = false;
+                    }
+
+                    if (stringResult[15].ToString() == "1") // flag printer Head Over temperature
+                    {
+                        Program.printerHeadTemperature = true;
+                    }
+                    else
+                    {
+                        Program.printerHeadTemperature = false;
+                    }
+
+                    if (stringResult[14].ToString() == "2") // flag printer Head Thermistor Open
+                    {
+                        Program.printerHeadThermistorOpen = true;
+                    }
+                    else
+                    {
+                        Program.printerHeadThermistorOpen = false;
+                    }
+
+                    if (stringResult[13].ToString() == "1") // flag printer Paper Jam
+                    {
+                        Program.printerPaperJammed = true;
+                    }
+                    else
+                    {
+                        Program.printerPaperJammed = false;
+                    }
+
+                    if (stringResult[16].ToString() == "1") // flag printer Out Of Paper
+                    {
+                        Program.printerOutOfPaper = true;
+                    }
+                    else
+                    {
+                        Program.printerOutOfPaper = false;
+                    }
+
+                    if (stringResult[16].ToString() == "4") // flag printer Head Open
+                    {
+                        Program.printerHeadOpen = true;
+                    }
+                    else
+                    {
+                        Program.printerHeadOpen = false;
+                    }
+
+                    if (stringResult[16].ToString() == "8") // flag printer Cutter Fault
+                    {
+                        Program.printerCutterFault = true;
+                    }
+                    else
+                    {
+                        Program.printerCutterFault = false;
+                    }
+
+                    if (stringResult[13].ToString() == "2") // flag printer Presenter Not Running
+                    {
+                        Program.printerPresenterNotRunning = true;
+                    }
+                    else
+                    {
+                        Program.printerPresenterNotRunning = false;
+                    }
+
+                    if (stringResult[12].ToString() == "4") // flag printer paper feed error
+                    {
+                        Program.printerPaperFeedError = true;
+                    }
+                    else
+                    {
+                        Program.printerPaperFeedError = false;
+                    }
+
+                    if (stringResult[31].ToString() == "7") // flag printer paper IN PRESENTER
+                    {
+                        Program.printerPaperInPresenter = true;
+                    }
+                    else
+                    {
+                        Program.printerPaperInPresenter = false;
+                    }
+
+
+
                 }
-                catch (ManagementException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+            }
+            catch
+            {
+                Console.WriteLine("Error");
             }
         }
 
-        
-       
     }
 }

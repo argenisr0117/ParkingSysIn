@@ -20,8 +20,8 @@ namespace SistemaParqueo
         
         AdamSocket adam6060 = new AdamSocket();
         AdamDevice adam_func = new AdamDevice();
-        public string adamip = Properties.Settings.Default.AdamIp;
-        public int adamport = Convert.ToInt16(Properties.Settings.Default.AdamPort);
+        public string adamip = Program.AdamIp;
+        public int adamport = Convert.ToInt16(Program.AdamPort);
         PrinterStatus printer = new PrinterStatus();
 
         public EstatusDispositivosEntradaForm()
@@ -38,12 +38,12 @@ namespace SistemaParqueo
         {
             try
             {
-                printer.PrinterState(Properties.Settings.Default.DefaultPrinter);  // Actualizar estatus printer
+                Program.P.CheckPrinterStatus();  // Actualizar estatus printer
 
-                if (Program.printerOffline)
+                if (Program.PrinterOffline)
                 {
                     printerOnline_pic.Image = Properties.Resources.circle_error;
-                    toolTip_info.SetToolTip(printerOnline_pic, Properties.Settings.Default.DefaultPrinter + " No está conectado o No es Printer por defecto");
+                    toolTip_info.SetToolTip(printerOnline_pic, Program.defaultprinter + " No está conectado o No es Printer por defecto");
 
                     printerStatus_pic.Image = Properties.Resources.circle_error;
                     toolTip_info.SetToolTip(printerStatus_pic, "Printer OFFLINE");
@@ -57,11 +57,46 @@ namespace SistemaParqueo
                     printerOnline_pic.Image = Properties.Resources.circle_ok;
                     toolTip_info.SetToolTip(printerOnline_pic, "Printer Online");
 
-                    if (Program.printerDoorOpened)
+                    if (Program.printerHeadOpen)
                     {
                         printerStatus_pic.Image = Properties.Resources.circle_error;
                         toolTip_info.SetToolTip(printerStatus_pic, "Tapa del Printer Está abierta");
                     }
+                    else if (Program.printerCutterFault)
+                    {
+                        printerStatus_pic.Image = Properties.Resources.circle_error;
+                        toolTip_info.SetToolTip(printerStatus_pic, "Error cortador de Papel");
+                    }
+                    else if (Program.printerHeadTemperature)
+                    {
+                        printerStatus_pic.Image = Properties.Resources.circle_error;
+                        toolTip_info.SetToolTip(printerStatus_pic, "Alta temperatura en Cabezal");
+                    }
+
+                    else if (Program.printerHeadThermistorOpen)
+                    {
+                        printerStatus_pic.Image = Properties.Resources.circle_error;
+                        toolTip_info.SetToolTip(printerStatus_pic, "Termistor Cabezal Abierto");
+                    }
+
+                    else if (Program.printerPaused)
+                    {
+                        printerStatus_pic.Image = Properties.Resources.circle_error;
+                        toolTip_info.SetToolTip(printerStatus_pic, "Printer Pausado");
+                    }
+
+                    else if (Program.printerPresenterNotRunning)
+                    {
+                        printerStatus_pic.Image = Properties.Resources.circle_error;
+                        toolTip_info.SetToolTip(printerStatus_pic, "Presenter no esta avanzando");
+                    }
+
+                    else if (Program.printerError)
+                    {
+                        printerStatus_pic.Image = Properties.Resources.circle_error;
+                        toolTip_info.SetToolTip(printerStatus_pic, "Error en Printer (general)");
+                    }
+
                     else
                     {
                         printerStatus_pic.Image = Properties.Resources.circle_ok;
@@ -79,6 +114,14 @@ namespace SistemaParqueo
                         estadoPapel_pic.Image = Properties.Resources.circle_error;
                         toolTip_info.SetToolTip(estadoPapel_pic, "Papel Atascado");
                     }
+
+                    else if (Program.printerPaperFeedError)
+                    {
+                        estadoPapel_pic.Image = Properties.Resources.circle_error;
+                        toolTip_info.SetToolTip(estadoPapel_pic, "Error Alimentador de Papel");
+                    }
+
+
                     else
                     {
                         estadoPapel_pic.Image = Properties.Resources.circle_ok;
@@ -86,23 +129,7 @@ namespace SistemaParqueo
                     }
 
 
-                    if (Program.printerPrinting)
-                    {
-                        if (notifyIcon1.Visible == false)
-                        {
-                            notifyIcon1.Visible = true;
-                            notifyIcon1.Icon = SystemIcons.Information;
-                            notifyIcon1.BalloonTipText = "Imprimiendo Ticket";
-                            notifyIcon1.ShowBalloonTip(19000);
-                        }
-
-                    }
-                    else
-                    {
-                        
-                        notifyIcon1.Visible = false;
-
-                    }
+                    
                 }
 
             }

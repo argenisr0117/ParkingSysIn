@@ -289,6 +289,8 @@ namespace SistemaParqueo {
             
             private global::System.Data.DataColumn columnestacion_ent;
             
+            private global::System.Data.DataColumn columnpromocion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SEL_TICKETDataTable() {
@@ -364,6 +366,14 @@ namespace SistemaParqueo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn promocionColumn {
+                get {
+                    return this.columnpromocion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +409,15 @@ namespace SistemaParqueo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SEL_TICKETRow AddSEL_TICKETRow(System.DateTime fecha_ent, byte[] img, string hora, string codigo_barra, string estacion_ent) {
+            public SEL_TICKETRow AddSEL_TICKETRow(System.DateTime fecha_ent, byte[] img, string hora, string codigo_barra, string estacion_ent, string promocion) {
                 SEL_TICKETRow rowSEL_TICKETRow = ((SEL_TICKETRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         fecha_ent,
                         img,
                         hora,
                         codigo_barra,
-                        estacion_ent};
+                        estacion_ent,
+                        promocion};
                 rowSEL_TICKETRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSEL_TICKETRow);
                 return rowSEL_TICKETRow;
@@ -434,6 +445,7 @@ namespace SistemaParqueo {
                 this.columnhora = base.Columns["hora"];
                 this.columncodigo_barra = base.Columns["codigo_barra"];
                 this.columnestacion_ent = base.Columns["estacion_ent"];
+                this.columnpromocion = base.Columns["promocion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -449,10 +461,13 @@ namespace SistemaParqueo {
                 base.Columns.Add(this.columncodigo_barra);
                 this.columnestacion_ent = new global::System.Data.DataColumn("estacion_ent", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestacion_ent);
+                this.columnpromocion = new global::System.Data.DataColumn("promocion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpromocion);
                 this.columnhora.ReadOnly = true;
                 this.columnhora.MaxLength = 4000;
                 this.columncodigo_barra.MaxLength = 15;
                 this.columnestacion_ent.MaxLength = 5;
+                this.columnpromocion.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -675,6 +690,22 @@ namespace SistemaParqueo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string promocion {
+                get {
+                    try {
+                        return ((string)(this[this.tableSEL_TICKET.promocionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'promocion\' in table \'SEL_TICKET\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSEL_TICKET.promocionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isfecha_entNull() {
                 return this.IsNull(this.tableSEL_TICKET.fecha_entColumn);
             }
@@ -731,6 +762,18 @@ namespace SistemaParqueo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setestacion_entNull() {
                 this[this.tableSEL_TICKET.estacion_entColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IspromocionNull() {
+                return this.IsNull(this.tableSEL_TICKET.promocionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetpromocionNull() {
+                this[this.tableSEL_TICKET.promocionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -898,6 +941,7 @@ namespace SistemaParqueo.parqueoDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("hora", "hora");
             tableMapping.ColumnMappings.Add("codigo_barra", "codigo_barra");
             tableMapping.ColumnMappings.Add("estacion_ent", "estacion_ent");
+            tableMapping.ColumnMappings.Add("promocion", "promocion");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
